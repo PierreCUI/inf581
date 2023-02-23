@@ -1,6 +1,9 @@
 from display import *
 
-seeds = 20
+import time
+start = time.time()
+
+seeds = 100
 times = 1
 method = 2
 cut = 5
@@ -42,4 +45,7 @@ def rend(note):
             render.gameStageDrawAuto(note[s][i], s, i, method)
 
 
-rend(note)
+# rend(note)
+
+end = time.time()
+print(end - start)

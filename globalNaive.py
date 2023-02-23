@@ -87,6 +87,18 @@ class globalNaive:
             for j0 in self.getAllCloseBlock(i0[0], i0[1]):
                 self.allUnknown[j0[0]][j0[1]] = False
 
+        if not allUncertainNumber:
+            if self.restMine:
+                while True:
+                    i, j = np.random.randint(low=0, high=self.height), np.random.randint(low=0, high=self.width)
+                    if self.mineField[i][j] == '':
+                        return [[2, i, j]]
+            else:
+                while True:
+                    i, j = np.random.randint(low=0, high=self.height), np.random.randint(low=0, high=self.width)
+                    if self.mineField[i][j] == '':
+                        return [[1, i, j]]
+
         allUncertainDecision = []
         allUncertainPossibility = []
         for i, j in allUncertainNumber:
